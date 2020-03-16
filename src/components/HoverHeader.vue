@@ -269,9 +269,9 @@ export default {
           // add some events?
           listeners: {
             // all possible native events
-            mouseover: evt => {
-              console.log("news hover", evt);
-            }
+            // mouseover: evt => {
+            //   console.log("news hover", evt);
+            // }
           },
           // just extra properties in the object
           new_section: false

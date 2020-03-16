@@ -10,7 +10,7 @@
 </template>
 <script>
 import jwt from "@/http/requests/auth/jwt/index.js";
-import Header from "@/components/HoverHeader.vue";
+import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 
 

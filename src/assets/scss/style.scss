@@ -27,13 +27,9 @@
 
 // import mixins
 @import "libs/mixins";
+@import "libs/variables";
 
-$c1 : #d17335;
-$c2 : #028985;
-$c3 : #333333;
-$c4 : #7a49b0;
-$c5 : #ffffff;
-$c6 : #000000;
+
 
 ::-webkit-scrollbar {
   display: none;
@@ -284,6 +280,15 @@ body {
 }
 
 // NAVBAR AVEC DROPDOWN ET MASK OPACITE
+// .vsm-root {
+//   background-color: red;
+//   .vsm-section {
+//     background-color: #000000;
+//     .vsm-link {
+//       background-color: yellow;
+//     }
+//   }
+// }
 #mainNavbar {
   .navbar {
     display: flex;
@@ -792,12 +797,6 @@ body {
 // RESPONSIVE
 
 // Defining values
-$screen-xs-max: 575.9px;
-$screen-sm-max: 767.9px;
-$screen-md-max: 991.9px;
-$screen-lg-max: 1199.9px;
-
-
 
 @media (min-width:1500px) {
 
@@ -846,45 +845,6 @@ $screen-lg-max: 1199.9px;
     padding-bottom: 20px;
     padding-top: 60px;
   }
-
-  #sidebar {  
-    button#openSidebar {
-      background-color: $c2 !important;
-      border-radius: 20px;
-      padding:5px;
-
-      span {
-        height: 30px;
-        img {
-          width: 30px;
-          height: 30px;
-        }
-      }
-    }
-  }
-  .sidebarSearch {
-    margin-top: 5px !important;
-  }
-  .vs-sidebar {
-      
-      a:active, a:visited, a:hover, a {
-        color: $c2 !important;
-        text-decoration: none;
-      }
-      .vs-sidebar-group.mainGroup>h4 {
-        font-size: 1rem;
-      }
-      .vs-sidebar-group.mainGroup .vs-sidebar-group.groupItem h4 {
-        font-size: 0.75rem;
-      }
-      .vs-sidebar-item-active.itemInGroup {
-        border-right:3px solid $c2 !important;
-      }
-      .vs-icon {
-        font-size: 1.2rem;
-      }
-  }
-
 
   // BODY
   .container.home {

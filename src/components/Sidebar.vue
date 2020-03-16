@@ -27,14 +27,14 @@
         ></b-form-input>
       </b-nav-form>
 
-      <vs-divider>Menu</vs-divider>
+      <vs-divider class="customDivider">Menu</vs-divider>
 
       <vs-sidebar-group
         :title="mainGroup.title"
         :key="mainGroup.id"
         v-for="mainGroup in mainGroupSidebar"
         class="mainGroup"
-        v-bind:style="`h4{color: ${mainGroup.color} !important;}`"
+        v-bind:style="`background-color: ${mainGroup.color} !important;`"
         :index="mainGroup.index"
       >
         <vs-sidebar-item :index="link.index" :href="link.title" :key="link.id" v-for="link in mainGroup.directItem">{{ link.title }}</vs-sidebar-item>
@@ -57,7 +57,7 @@
         </vs-sidebar-group>
       </vs-sidebar-group>
 
-      <vs-divider></vs-divider>
+      <!-- <vs-divider></vs-divider> -->
 
 
       <!-- <div class="footer-sidebar" slot="footer">
@@ -575,6 +575,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/assets/scss/libs/variables";
 #sidebar {
   justify-content: space-between;
 
@@ -600,6 +601,72 @@ export default {
     }
   }
 }
+#sidebar {  
+    button#openSidebar {
+      background-color: $c2 !important;
+      border-radius: 20px;
+      padding:5px;
+
+      span {
+        height: 30px;
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+  .sidebarSearch {
+    margin-top: 5px !important;
+  }
+  .vs-sidebar {
+    .vs-divider-border {
+      border-top-color:rgba(255, 255, 255, 1) !important;
+    }
+    .vs-divider.customDivider {
+      .vs-divider--text {
+        color: $c5 !important;
+        text-transform: uppercase;
+        background: $c3 !important;
+      }
+    }
+      .vs-sidebar--items {
+        background-color: $c3;
+      }
+      a:active, a:visited, a:hover, a {
+        color: $c5 !important;
+        text-decoration: none;
+      }
+      .vs-sidebar-group.mainGroup>h4 {
+        font-size: 1rem;
+        color:$c5;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 0;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+      .vs-sidebar-group.mainGroup .vs-sidebar-group.groupItem h4 {
+        font-size: 0.70rem;
+        color:$c5;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      .vs-sidebar-item-active.itemInGroup {
+        border-right:3px solid $c2 !important;
+      }
+      .vs-icon {
+        font-size: 1.2rem;
+      }
+      .vs-sidebar-group.mainGroup:last-child {
+        h4 {
+          color: $c3 !important;
+        }
+        a:active, a:visited, a:hover, a {
+        color: $c3 !important;
+      }
+      }
+  }
 .footer-sidebar {
   display: flex;
   align-items: center;
@@ -611,4 +678,5 @@ export default {
     border-radius: 0px !important;
   }
 }
+
 </style>
