@@ -1,0 +1,987 @@
+/*=========================================================================================
+  File Name: main.scss
+  Description: Main scss file. Imports other scss partials from 'vuexy' folder
+  ----------------------------------------------------------------------------------------
+  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+  Author: Pixinvent
+  Author URL: http://www.themeforest.net/user/pixinvent
+==========================================================================================*/
+
+@import "vuexy/variables";
+
+@import "vuexy/layout";
+@import "vuexy/typography";
+@import "vuexy/misc";
+@import "vuexy/extraComponents";
+@import "vuexy/themes";
+@import "vuexy/routerAnimations";
+@import "vuexy/transitions";
+
+@import "vuexy/customClasses";
+
+// Vuesax fixes and enhancments
+@import "vuexy/fixesVuesax";
+
+// Tailwind Fixes
+@import "vuexy/tailwindFix";
+
+// import mixins
+@import "libs/mixins";
+
+$c1 : #d17335;
+$c2 : #028985;
+$c3 : #333333;
+$c4 : #7a49b0;
+$c5 : #ffffff;
+$c6 : #000000;
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+#app {
+  position: relative;
+}
+body {
+  background:#F1F1F1;
+}
+
+#mainHeader {
+  border-top: 10px solid $c2;
+  position: relative;
+  z-index: 500;
+  height: auto;
+  padding-top: 50px;
+  padding-bottom: 36px;
+  display: flex;
+  align-items: center;
+  & > div:not(#topHeader) {
+    width: 100%;
+  }
+  &::before {
+    @include pseudo();
+    background-color: $c2;
+    height: 10px;
+    width: 100%;
+    top: -10px;
+    left:-100%;
+  }
+
+  #mainLogo {
+    img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+
+// <!-- TODO: FINIR LE TOP HEADER !!!!!!! -->
+
+#topHeader {
+  display: flex;
+  justify-content: center;
+  align-items:flex-end;
+  position: absolute;
+  z-index: 1;
+  background-color: #333;
+  border-bottom-left-radius: 50px;
+  height: 55px;
+  width: 80%;
+  min-width: fit-content;
+  padding-left: 50px;
+  top: -10px;
+  right: 0;
+  &::before {
+    @include pseudo();
+    background-color: $c3;
+    height: 55px;
+    width: 100%;
+    top: 0;
+    right:-100%;
+  }
+}
+
+#topHeader {
+    #nav-collapse {
+      position: relative;
+      height: 100%;
+    }
+    .navbar {
+    width: 100%;
+    height: 100%;
+    padding:10px 0;
+
+    .navbar-nav {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+
+      li a {
+        color:$c5;
+      } 
+
+      // TOP HEADER : INPUT SEARCH
+      .form-inline {
+        height: 100%;
+      }
+      .navSearch {
+        background-color:transparent;
+        border:none;
+        border-radius: 0;
+        border-bottom:1px solid $c5;
+        padding-left: 0;
+        height: 100%;
+        color:$c5;
+
+        &::placeholder {
+          color:$c5
+        }
+
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
+      }
+
+      // TOP HEADER : ERASMUS
+      .erasmus {
+        background-color:$c5;
+        border-radius:25px;
+        a {
+          height: 100%;
+          padding:5px;
+        }
+        img {
+          width: 100px;
+          height: 100%;
+        }      
+      }
+
+      // TOP HEADER : BROCHURES
+      .brochures {
+        background-color:transparent;
+        border:none;
+        border-radius: 0;
+        border-bottom-left-radius: 5px;
+        border-bottom:1px solid $c5;
+
+        & a.nav-link {
+          width:100%;
+          padding-left: 30px;
+          padding-right: 0;
+          position: relative;
+        }
+
+        .bgIcoBrochure {
+          background-color: $c5;
+          width: 30px;
+          height: calc(100% - 4px);
+          border-radius: 25px;
+          position: absolute;
+          left:-10px;
+          bottom:0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img {
+            width: 15px;
+            height: auto;
+          }
+        }
+      }
+
+        // TOP HEADER : CONTACT
+      .contact {
+        background-color:transparent;
+        border:none;
+        border-radius: 0;
+        border-bottom-left-radius: 5px;
+        border-bottom:1px solid $c1;
+
+        & a.nav-link {
+          width:100%;
+          padding-left: 30px;
+          padding-right: 0;
+          position: relative;
+        }
+
+        .bgIcoContact {
+          background-color: $c1;
+          width: 30px;
+          height: calc(100% - 4px);
+          border-radius: 25px;
+          position: absolute;
+          left:-10px;
+          bottom:0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img {
+            width: 20px;
+            height: auto;
+          }
+        }
+      }
+
+      // TOP HEADER : CONNEXION
+      .connexion {
+        background-color: $c2;
+        border-radius:25px;
+        & a.nav-link {
+          width:100%;
+          padding-left: 40px;
+          position: relative;
+        }
+
+        .bgIcoConnex {
+          background-color: $c5;
+          width: 30px;
+          height: calc(100% - 4px);
+          border-radius: 25px;
+          position: absolute;
+          left:3px;
+          top: 2px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 20px;
+            height: auto;
+          }
+          
+        }
+      }
+    }
+  }  
+}
+.vs-popup {
+  p {
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  .modalBtn {
+    display: flex;
+    justify-content: space-around;
+    button {
+      border-radius: 15px;
+    }
+    .esidoc {
+      background-color: $c2 !important;
+    }
+    .proLP {
+      background-color: $c4 !important;
+    }
+    .proLGT {
+      background-color: $c1 !important;
+    }
+  }
+}
+
+// NAVBAR AVEC DROPDOWN ET MASK OPACITE
+#mainNavbar {
+  .navbar {
+    display: flex;
+    align-items: flex-end;
+    .navbar-nav {
+      width: 100%;
+      text-align: center;
+      align-items: center;
+      justify-content: space-evenly;
+      font-weight: 600;
+    }
+    span {
+      text-transform: uppercase;
+    }
+  }
+}
+.navbar-collapse.show {
+  width: 100%;
+  .navbar-nav {
+    display: flex;
+    justify-content: flex-start;
+    .nav-item {
+      width:100%;
+    }
+  }
+}
+.dropdown {
+  position: inherit;
+  z-index: 5;
+  &.show {
+    .afterDropdown {
+      opacity: 1;
+    }
+  }
+}
+.nav-link {
+  position: relative;
+  .afterDropdown {
+    opacity: 0;
+    width: 15px;
+    height: 55px;
+    position: absolute;
+    left: calc(50% - 10px);
+    bottom: -60px;
+  }
+}
+.dropdown-menu {
+  padding:0;
+  width: 100%;
+  background:transparent;
+  border:none;
+  margin: 0;
+  &.show {
+    top: 140px;
+  }
+ 
+  .mainDropdown {
+    &>ul {
+      display: flex;
+    }
+  }
+  .firstGroup,.secondGroup,.thirdGroup {
+    width: 33%;
+    padding:15px;
+  }
+  .firstGroup {
+    background-size: 100% 60% !important;
+    background-color: $c5 !important;
+    padding:30px 50px;
+    position: relative;
+
+    .beforeFirstGroup {
+      width: 10px;
+      height: 300px;
+      position: absolute;
+      top: 20px;
+      left: 10px;
+    }
+
+    .firstGroupHeader {
+      .dropdown-header {
+        padding-top: 15px;
+        padding-left: 30px;
+        font-size: 2rem;
+        font-weight: 400;
+        position: relative;
+      }
+    }
+  }
+  .dropdown-header {
+    font-size: 1.2rem;
+    color:$c5;
+    text-shadow: 1px 2px 5px $c6;
+  }
+  .dropdown-item {
+    color:$c5;
+    &:hover {
+      color:$c2;
+    }
+  }
+}
+.firstGroup ul {
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+
+  .linkInFirstGroup {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    li {
+      border-radius: 25px;
+      padding:5px 5px 5px 40px;
+      text-align: center;
+      position: relative;
+
+      .bgIcoConnex {
+        background-color: $c5;
+        width: 30px;
+        height: calc(100% - 4px);
+        border-radius: 25px;
+        position: absolute;
+        left:1.5px;
+        top: 2px;
+
+        img {
+          width: 20px;
+          height: auto;
+          position: absolute;
+          left: calc(50% - 10px);
+          top: 5px;
+          // height: calc(100% - 5px);
+        }
+        
+      }
+      a {
+        padding:0;
+      }
+      
+      a:hover {
+        background-color: inherit;
+        color:$c5
+      }
+    }
+  }
+}
+.contentAfterHeader {
+  position: relative;
+}
+.mask {
+  display: none;
+
+  &.show {
+    position: absolute;
+    z-index: 4;
+    top: 200px;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: block;
+    transition: opacity .3s ease;
+  }
+}
+
+// HOMECAROUSEL
+.backgroundHome {
+  background:url('../images/elements/bg-home.png') no-repeat;
+  background-size:100% auto;
+  background-position: left center;
+}
+#homeCarousel {
+  width: 90%;
+  // height:80%;
+  // position: absolute;
+  padding-bottom: 150px;
+  display: block;
+  // top:0;
+  // left: 0;
+  z-index: 1;
+  .carousel-inner,.carousel-item,.carousel-caption, .carousel-item img {
+      height: 100%;
+      width: 100%;
+      max-height: 600px;
+      border-bottom-right-radius: 250px;
+  }
+  .carousel-caption {
+      position: unset;
+      padding: 0;
+  }
+  img {
+      object-fit: cover;
+  }
+}
+
+// HOMETITLE
+.homeTitle {
+  position: absolute;
+  width: 70%;
+  right: 0;
+  top: -250px;
+  z-index: 1;
+  h1 {
+    font-size:1.6rem;
+    color:$c5;
+    font-weight: 400;
+    text-shadow: 2px 4px 10px $c6;
+  }
+  span {
+    font-weight: 600;
+  }
+  &::after {
+    @include pseudo;
+    width: 3000px;
+    height: 100%;
+    top: 20px;
+    left: -40px;
+    border-left: 4px solid $c2;
+    border-bottom:4px solid $c2;
+    border-bottom-left-radius: 100px;
+  }
+}
+
+// AGENDA
+.container.home {
+  margin-top: -400px;
+}
+.wrapperAgenda {
+  position: relative;
+  #agenda {
+    position: relative;
+    margin: 50px 0;
+    z-index: 2;
+    width: 40%;
+    background:rgba(0,0,0,0.6);
+    color:$c5;
+    padding:20px;
+    border-top-right-radius: 100px;
+    
+    &::after {
+      @include pseudo();
+      background:url('../images/elements/ico-agenda.png') no-repeat;
+      background-size: contain;
+      width: 100px;
+      height: 100px;
+      top: -40px;
+      right:20px;
+    }
+
+    .agendaHeader h2 {
+      text-transform: uppercase;
+      color:$c5;
+    }
+  
+    .agendaRdv {
+      padding:10px 0;
+      .rdvTitle {
+        border-bottom: 2px dotted $c5; 
+        h3{
+          color:$c5;
+          
+          span:first-child {
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+
+  }
+}
+.wrapperAgendaBtn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-top:15px;
+  
+  .agendaButton {
+    background-color:$c1;
+    color:$c5;
+    padding:10px 45px 10px 25px;
+    border-bottom-right-radius: 30px;
+    position: relative;
+
+    &::after {
+      @include pseudo();
+      background:url('../images/elements/lire-suite.png') no-repeat;
+      background-size: contain;
+      top: calc(50% - 10px);
+      right: 10px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+// ACTUALITES
+#wrapperActu {
+  padding-bottom: 15px;
+  .swiper-container {
+    overflow:unset
+  }
+  .swiper-pagination {
+    bottom:-40px;
+  }
+  .swiper-pagination-bullet {
+    background-color:rgba($color:$c1, $alpha: .8);
+  }
+  .swiper-pagination-bullet-active {
+    background:$c1 !important;
+  }
+  .swiper-slide {
+    height: 500px;
+    background-color:rgba($color:$c1, $alpha: .4);
+    border-top-left-radius: 50px;
+    color:$c1;
+
+    &:nth-child(2n + 1) {
+        background-color: $c5;
+    }
+  }
+  .cardActu {
+    height: 100%;
+  }
+  .mainTitleActu {
+    width: 100%;  
+    display: flex;
+    justify-content: center;
+    padding:20px 0 50px 0;
+    h2 {
+      color:$c1;
+      text-transform: uppercase;
+      position: relative;
+
+      &::after {
+        @include pseudo();
+        background:url('../images/elements/afterActu.svg') no-repeat;
+        width: 1000px;
+        height:20px;
+        top: calc(50% - 10px);
+        right:-1050px;
+      }
+    }
+
+    h2::before {
+      @include pseudo();
+      background:url('../images/elements/ico-actu.png') no-repeat;
+      background-size: 80%;
+      background-position: center;
+      background-color:rgba($color:$c1, $alpha: .4);
+      padding:15px;
+      width: 120px;
+      height: 120px;
+      border-radius: 60px;
+      top: -50px;
+      left: -150px;
+    }
+   
+  }
+}
+.carouselActu {
+  padding-bottom: 40px;
+  overflow: hidden;
+  .actuImg {
+    border-top-left-radius: 50px;
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    position: relative;
+  }
+  .actuTag {
+    background-color: $c1;
+    color:$c5;
+    border-radius:20px;
+    width: fit-content;
+    padding: 3px 10px;
+    position: absolute;
+    bottom:0;
+    left: 10px;
+  }
+  .cardContent {
+    height: calc(100% - 200px);
+    padding:15px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    h3 {
+      color:$c1;
+      padding-bottom: 15px;
+      border-bottom: 2px dotted $c1;
+    }
+
+    .cardDesc {
+      color:$c3;
+    }
+  }
+}
+.backgroundActu {
+  position: absolute;
+  left: 0;
+  background:lightCoral;
+  background:url('../images/elements/bg-actu.png');
+  background-size:100% auto;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 300px;
+  // height: 100%;
+}
+
+
+
+// PAGE CONTACT
+.container.contact {
+  margin-top: -250px;
+  position: relative;
+  z-index: 1;
+}
+#mapid {
+  a:active, a:visited, a:hover, a {
+    color: $c2 !important;
+  }
+}
+#formContact {
+  position: relative;
+  background:rgba(0,0,0,0.6);
+  padding:20px;
+  border-top-right-radius: 100px;
+  .vs-con-input-label {
+    width: 100%;
+    color:$c5;
+  }
+  .vs-input--label {
+    color:$c5;
+  }
+
+  .vs-input-primary .vs-input--input:focus, 
+  .focusx.vs-textarea-primary {
+    border:1px solid $c1 !important;
+  }
+
+  .vs-con-textarea {
+    background-color: $c5;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+}
+.contactInfo {
+  background-color:rgba($color: $c2, $alpha: 0.8);
+  border-bottom-left-radius: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding:15px;
+  height: 100%;
+  min-height: 500px;
+  
+
+  h2 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    border:2px solid $c5;
+    color: $c5;
+    border-top-right-radius: 25px;
+    padding:5px 20px;
+    // width:fit-content;
+
+  }
+  .diviser {
+    background-color: $c5;
+    width: 80%;
+    height: 2px;
+  }
+  .blockInfoContact {
+    // text-align: center;
+    // margin-bottom: 20px;
+    width: 80%;
+    .adresse {
+      text-transform: uppercase;
+    }
+    h3 {
+      color:$c5;
+      text-transform: uppercase;
+    }
+    p {
+      margin-bottom: 0;
+      color: $c5;
+      span {
+        font-weight: 600;
+      }
+    }
+    & p:first-of-type {
+      margin-top: 10px;
+    }
+
+  }
+}
+// .btnContact {
+//   background-color: $c2;
+// }
+
+
+// RESPONSIVE
+
+// Defining values
+$screen-xs-max: 575.9px;
+$screen-sm-max: 767.9px;
+$screen-md-max: 991.9px;
+$screen-lg-max: 1199.9px;
+
+
+
+@media (min-width:1500px) {
+
+}
+
+@media (max-width: $screen-lg-max) {
+
+}
+
+@media (max-width: $screen-md-max) {
+  // HEADER/SIDEBAR
+  #topHeader {
+    .navbar {
+      .navbar-nav {
+        
+        & li.form-inline {
+          position: absolute;
+        }
+
+        span {
+          display: none;
+        }
+
+        .brochures,.contact,.connexion {
+          border-bottom: inherit;
+          height: 100%;
+          a.nav-link {
+            padding: inherit;
+            height: 100%;
+            width: 100%;
+          }
+          .bgIcoBrochure,.bgIcoContact,.bgIcoConnex {
+            position: relative;
+            left: inherit;
+            height: 100%;
+            width: 35px;
+          }
+        }
+        .connexion {
+          background-color: inherit;
+        }
+      }
+    }
+  }
+  #mainHeader {
+    padding-bottom: 20px;
+    padding-top: 60px;
+  }
+
+  #sidebar {  
+    button#openSidebar {
+      background-color: $c2 !important;
+      border-radius: 20px;
+      padding:5px;
+
+      span {
+        height: 30px;
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+  .sidebarSearch {
+    margin-top: 5px !important;
+  }
+  .vs-sidebar {
+      
+      a:active, a:visited, a:hover, a {
+        color: $c2 !important;
+        text-decoration: none;
+      }
+      .vs-sidebar-group.mainGroup>h4 {
+        font-size: 1rem;
+      }
+      .vs-sidebar-group.mainGroup .vs-sidebar-group.groupItem h4 {
+        font-size: 0.75rem;
+      }
+      .vs-sidebar-item-active.itemInGroup {
+        border-right:3px solid $c2 !important;
+      }
+      .vs-icon {
+        font-size: 1.2rem;
+      }
+  }
+
+
+  // BODY
+  .container.home {
+    margin-top: -350px;
+  }
+  .homeTitle {
+    top: -200px;
+    width: 80%;
+    h1 {
+      font-size: 1.4rem;
+    }
+  }
+  #homeCarousel {
+    width: 100%;
+    .carousel-inner,.carousel-item,.carousel-caption, .carousel-item img {
+      border-bottom-right-radius: 50px;
+    }
+  }
+  .wrapperAgenda {
+    #agenda {
+      width: 70%;
+    } 
+  }
+}
+
+@media (max-width: $screen-sm-max) {
+  // HEADER/SIDEBAR
+ #topHeader {
+   width: 100%;
+   border-bottom-left-radius: 0;
+   padding-left: 0;
+
+   &::before {
+    @include pseudo();
+    background-color: $c3;
+    height: 55px;
+    width: 100%;
+    top: 0;
+    left:calc(-100% + 1px);
+  }
+   &::after {
+    @include pseudo();
+    background-color: $c3;
+    height: 55px;
+    width: 100%;
+    top: 0;
+    right:calc(-100% + 1px);
+  }
+ }
+ #sidebar {
+   .logoSidebar img {
+     max-height: 60px;
+   }
+ }
+
+   // BODY
+  .container.home {
+    margin-top: -250px;
+  }
+  .homeTitle {
+    top: -200px;
+    h1 {
+      font-size: 1.2rem;
+    }
+  }
+//  CONTACT
+  .contactInfo {
+    margin-top: 15px;
+  }
+
+
+}
+@media (max-width: $screen-xs-max) {
+  // HEADER/SIDEBAR
+  #topHeader {
+    .erasmus img {
+      width: 70px !important;
+    }
+  }
+
+
+  //  BODY
+  .container.home {
+    margin-top:-150px;
+  }
+  .homeTitle {
+    top: -200px;
+    width: 90%;
+    h1 {
+      font-size: 1.2rem;
+    }
+  }
+
+  // AGENDA
+  .wrapperAgenda {
+    #agenda {
+      width: 100%;
+    } 
+  }
+}

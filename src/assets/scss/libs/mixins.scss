@@ -1,0 +1,61 @@
+@mixin triangle($color : #fff, $size: 10px, $direction: bottom) {
+    &::after {
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      @if $direction == down {
+         border-top: $size solid $color;
+         border-left: $size solid transparent;
+         border-right: $size solid transparent;
+         bottom: $size * -1;
+         left: calc(50% - #{$size});
+      }
+      @else if $direction == top {
+         border-bottom: $size solid $color;
+         border-left: $size solid transparent;
+         border-right: $size solid transparent;
+         top: $size * -1;
+         left: calc(50% - #{$size});
+       }
+       @else if $direction == right {
+         border-left: $size solid $color;
+         border-top: $size solid transparent;
+         border-bottom: $size solid transparent;
+         right: $size * -1;
+         top: calc(50% - #{$size});
+       }
+       @else if $direction == left {
+         border-right: $size solid $color;
+         border-top: $size solid transparent;
+         border-bottom: $size solid transparent;
+         left: $size * -1;
+         top: calc(50% - #{$size});
+       }
+     }
+  }
+
+  @mixin puceNavbar($bgColor) {
+    @include pseudo();
+    background-color: $bgColor;
+    width: 12.5px;
+    height: 12.5px;
+    border-radius: 10px;
+    opacity: 0.4;
+    right: -12.5px;
+    top: calc(50% - 6.25px);
+  }
+  
+  @mixin pseudo($display: block, $pos: absolute, $content: ''){
+      content: $content;
+      display: $display;
+      position: $pos;
+  }
+  
+  @mixin truncate($truncation-boundary) {
+      max-width: $truncation-boundary;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+  }
+  
